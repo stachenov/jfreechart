@@ -632,8 +632,8 @@ public class TimeSeriesCollection<S extends Comparable<S>>
         while (iterator.hasNext()) {
             Comparable seriesKey = (Comparable) iterator.next();
             TimeSeries<S> series = getSeries((S) seriesKey);
-            Range r = series.findValueRange(xRange, this.xPosition, 
-                    this.workingCalendar.getTimeZone());
+            Range r = series.findValueRange(xRange, this.xPosition,
+                    this.workingCalendar);
             result = Range.combineIgnoringNaN(result, r);
         }
         return result;
